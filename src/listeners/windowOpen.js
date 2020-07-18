@@ -12,7 +12,7 @@ module.exports = async (bot, window) => {
             await bot.clickWindow(13, 1, 0, err => err && console.error(err));
             break;
         case 'Select Battle Buddy!':
-            if (bot.currentWindow) await bot.closeWindow();
+            await bot.closeWindow(window);
             await sleep(500);
             await bot.setQuickBarSlot(1);
             await bot.activateItem(); // open kits menu
@@ -20,7 +20,7 @@ module.exports = async (bot, window) => {
         case 'Kits': // select kit menu
             let tntKit = window.slots.find(item => item && item.name === 'tnt'); // tnt kit item
             if (tntKit) bot.clickWindow(tntKit.slot, 1, 0); // check if blocksmc removed the kit :p
-            else if (bot.currentWindow) bot.closeWindow(); // close the window if they did
+            else bot.closeWindow(window); // close the window if they did
             break;
     }
 }
