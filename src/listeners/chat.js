@@ -16,6 +16,7 @@ module.exports = async (bot, username, message, _translate, jsonMsg) => {
 }
 
 async function startTNT(bot) {
+    await place(bot, 1, 0, -1, 0, true);
     await place(bot, 0, 0, -1, -1);
     await place(bot, 0, -1, -1, 0);
     await place(bot, 0, 0, -1, 1);
@@ -28,5 +29,5 @@ async function startTNT(bot) {
     await place(bot, 0, -1, 0, 0);
     await place(bot, 0, 0, 0, 1);
     await place(bot, 0, 1, 0, 0);
-    await place(bot, 1, 0, -1, 0, true);
+    // await place(bot, 1, 0, -1, 0, true);
 }
