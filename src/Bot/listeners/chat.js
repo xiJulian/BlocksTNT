@@ -7,11 +7,11 @@ module.exports = async (bot, username, message, _translate, jsonMsg) => {
         await sleep(3000); // wait 3sec
         await startTNT(bot); // place tnt and redstone :p, wil make it better soon
     } else if (jsonMsg.extra && jsonMsg.extra.find(msg => msg.text === 'Match Recap ')) { // on game end
-        console.log('ee');
         await sleep(2000); // wait 2sec
         await bot.setQuickBarSlot(7); // select "play again" item
-        await sleep(1000);
+        await sleep(2000);
         await bot.activateItem(); // play again!
+        await bot.activateItem();
     }
 }
 

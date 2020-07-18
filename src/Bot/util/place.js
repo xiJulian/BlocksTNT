@@ -25,7 +25,7 @@ module.exports = async (bot, slot, dx, dy, dz, jump = false) => {
                                 resolve();
                                 return;
                             } else if (blockUnderPlayer.type === 54 || blockUnderPlayer.type === 78 || blockUnderPlayer.type === 80) {
-                                module.exports(slot, -1, 0, 1, jump);
+                                module.exports(bot, slot, -1, 0, 1, jump);
                                 return;
                             }
                             return;
@@ -41,10 +41,12 @@ module.exports = async (bot, slot, dx, dy, dz, jump = false) => {
             if (err) {
                 let block = bot.blockAt(bot.entity.position.offset(dx, dy + 1, dz));
                 if (block && block.type != 46 && block.type != 0) {
-                    bot.dig(block, err => {
-                        if (err) return console.error(err);
-                        module.exports(slot, dx, dy, dz, jump);
-                    });
+                    if (bot.digTime(block) < 10000) {
+                        bot.dig(block, err => {
+                            if (err) return console.error(err);
+                            module.exports(bot, slot, dx, dy, dz, jump);
+                        });
+                    }
                     return;
                 }
                 resolve();
