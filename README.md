@@ -3,6 +3,7 @@
 
 BlocksMC SkyWars TNT griefing bot.
 Still not finished!
+**I may change this bot to public bot instead of griefing bot.**
 
 >  **I'm not responsible if you use this in BlocksMC, use this at your own risk!**
 
