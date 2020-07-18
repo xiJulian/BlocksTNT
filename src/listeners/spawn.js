@@ -25,7 +25,7 @@ module.exports = async bot => {
         await bot.pathfinder.setGoal(new goals.GoalBlock(1.507, 101, -170.700)); // navigate to skywars teams npc
     } else if (bot.spawn >= 4) { // skywars waiting lobby
         bot.waiting = true;
-        await bot.setQuickBarSlot(1);
-        await bot.activateItem(); // open kits menu
+        await bot.setQuickBarSlot(0);
+        await bot.activateItem(); // open select partner menu, to check if in hub or not
     }
 }

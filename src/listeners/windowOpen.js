@@ -12,18 +12,16 @@ module.exports = async (bot, window) => {
         case 'SkyWars Teams': // when click on npc (map selector menu)
             await bot.clickWindow(13, 1, 0, err => err && console.error(err));
             break;
-        // case 'Select Battle Buddy!': // choose partner menu (on waiting lobby)
-        //     let myHead = window.slots.find(item => item && item.nbt.value.display.value.Name.value === '§8§lxiJulian_');
-        //     if (myHead) await bot.clickWindow(myHead.slot, 1, 0);
-        //     else await bot.closeWindow();
-
-        //     await sleep(1000);
-        //     await bot.setQuickBarSlot(1);
-        //     await bot.activateItem();
-        //     break;
+        case 'Select Battle Buddy!':
+                await bot.closeWindow();
+                await sleep(500);
+                await bot.setQuickBarSlot(1);
+                await bot.activateItem(); // open kits menu
+            break;
         case 'Kits': // select kit menu
             let tntKit = window.slots.find(item => item && item.name === 'tnt'); // tnt kit item
-            if (tntKit) await bot.clickWindow(tntKit.slot, 1, 0); // check if blocksmc removed the kit :p
-            else await bot.closeWindow(); // close the window if they did
+            if (tntKit) bot.clickWindow(tntKit.slot, 1, 0); // check if blocksmc removed the kit :p
+            else bot.closeWindow(); // close the window if they did
+            break;
     }
 }
