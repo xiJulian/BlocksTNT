@@ -24,7 +24,7 @@ module.exports = async (bot, slot, dx, dy, dz, jump = false) => {
                                 bot.removeListener('move', placeIfHighEnough);
                                 resolve();
                                 return;
-                            } else if (blockUnderPlayer.type === 54 || blockUnderPlayer.type === 78 || blockUnderPlayer.type === 80) {
+                            } else if (blockUnderPlayer && blockUnderPlayer.type === 54 || blockUnderPlayer.type === 78 || blockUnderPlayer.type === 80) {
                                 module.exports(bot, slot, -1, 0, 1, jump);
                                 return;
                             }
