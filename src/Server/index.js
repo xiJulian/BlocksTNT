@@ -11,7 +11,7 @@ module.exports = bot => {
     app.set('view engine', 'ejs');
 
     app.get('/', (req, res) => {
-        res.send('soon');
+        res.send('Soon');
     });
 
     app.listen(3000, () => console.log('Server started on http://localhost:3000/'));
