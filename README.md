@@ -24,4 +24,4 @@ The bot joins SkyWars game on BlocksMC server, it choose TNT kit then explodes t
 
 - [ ] Maybe a simple website to control the bot?
 - [ ] Make the TNT placement better, faster and cause more damage.
-- [ ] Auto reconnect if blocksmc crashed :p
+- [ ] Auto reconnect if the bot get disconnected
