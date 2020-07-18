@@ -11,18 +11,17 @@ module.exports = async (bot, username, message, _translate, jsonMsg) => {
         await bot.setQuickBarSlot(7); // select "play again" item
         await sleep(2000);
         await bot.activateItem(); // play again!
-        await bot.activateItem(); // try again if failed
-        await sleep(1000);
-        await bot.activateItem(); // AGAIN
+        await sleep(750)
+        if (bot.inGame && !bot.waiting) await bot.activateItem(); // try again if failed
     }
 }
 
 async function startTNT(bot) {
-    await place(bot, 1, 0, -1, 0, true);
     await place(bot, 0, 0, -1, -1);
     await place(bot, 0, -1, -1, 0);
     await place(bot, 0, 0, -1, 1);
     await place(bot, 0, 1, -1, 0);
+    await place(bot, 1, 0, -1, 0, true);
     await place(bot, 0, -1, -1, 1);
     await place(bot, 0, -1, -1, -1);
     await place(bot, 0, 1, -1, -1);
