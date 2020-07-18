@@ -5,13 +5,15 @@ BlocksMC SkyWars TNT griefing bot.
 Still not finished!
 **I may change this bot to public bot instead of griefing bot.**
 
->  **I'm not responsible if you use this in BlocksMC, use this at your own risk!**
 
-  
+## What is this bot?
+The bot joins SkyWars game on BlocksMC server, it choose TNT kit then explodes the team.
+
+>  **I'm not responsible if you use this in BlocksMC, use this at your own risk!**
 
 ## Known Bugs/Problems:
 
-- It doesn't place TNT if there's chest or snow under the bot.
+- Bot doesn't place redstone if there's chest or snow under the bot.
 - TNT placement is *slow*..
 
   
@@ -20,3 +22,4 @@ Still not finished!
 
 - [ ] Maybe a simple website to control the bot?
 - [ ] Make the TNT placement better, faster and cause more damage.
+- [ ] Auto reconnect if blocksmc crashed :p
